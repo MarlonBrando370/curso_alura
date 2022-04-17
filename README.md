@@ -1,2 +1,3 @@
 # curso_alura
- Corso de programação Alura/ONE Oracle Next Education
+ Curso de programação Alura/ONE Oracle Next Education
+ 
