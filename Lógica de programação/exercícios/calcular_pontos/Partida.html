@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function pulalinha(){
+            document.write('<br><br>');
+        }
+        function mostra(frase){
+            document.write(frase);
+            pulalinha()
+        }
+        function calcularPontos(vitorias, empates){
+            return (vitorias * 3) + empates;
+            mostra(frase);
+           
+        }
+        function comparacao(){
+            if(resultado > 28){
+                mostra(nomeTime + ' está melhor do que o ano passado.');
+            }
+            if(resultado < 28){
+                mostra(nomeTime + ' está pior do que o ano passado.');
+            }
+            if(resultado == 28){
+                mostra(nomeTime + ' está igual ao ano passado');
+            }
+        }
+        var nomeTime = prompt("Informe o nome do time");
+
+        var vitorias = parseInt(prompt('Informe a quantidades de vitórias'));
+
+        var empates = parseInt(prompt('Informe a quantidade de empates'));
+        var resultado = calcularPontos(vitorias, empates);
+        mostra(nomeTime + ' possui ' + resultado + ' pontos');
+        comparacao();
+
+
+    </script>
+</body>
+</html>
