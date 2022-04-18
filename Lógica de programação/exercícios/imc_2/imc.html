@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo imc</title>
+</head>
+<body>
+    <script>
+        function mostra(frase){
+            document.write(frase);
+            document.write("<br><br>");
+
+        }
+     function calculaImc(peso, altura){
+         return peso / (altura * altura);
+     }
+     function condicaoImc(){
+         if (imc < 18.5){
+             mostre('Você está a baixo do peso');
+         }
+         if(imc >=18.5 && imc <= 35){
+             mostra('Você está dentro da média');
+         }
+         if(imc > 35){
+             mostra('Você está acima do peso');
+         }
+     }
+     var alturaInformada = prompt('Informe a sua altura');
+     var pesoInformado = prompt('Agora informe o seu peso');
+     var imc = calculaImc(pesoInformado, alturaInformada);
+     mostra('O sei imc é ' + Math.round(imc));
+     condicaoImc();
+
+
+
+
+    </script>
+</body>
+</html>
