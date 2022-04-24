@@ -10,19 +10,33 @@
     <script>
         function mostra(frase){
             document.write(frase);
-            document.write('<br>');
+            document.write('<br><br>');
         }
-        function resultado(){
-            if (chute == numeroPensado){
-                mostra('Você acertou, parabêns!');
-            }else{
-                mostra('Que pena, você errou! O número pensado foi ' + numeroPensado);
-            }
+        
+          var numeroPensado = Math.round(Math.random() * 10);
+          var chances = 1
 
-        }
-        var numeroPensado = Math.round( Math.random() * 10);
-        var chute = parseInt(prompt('Digite o seu chute')); 
-        resultado();
+          while(chances <= 3){
+             var chute = parseInt(prompt('Chute um número'));
+                if(chute == numeroPensado){
+                     mostra('Parabêns, você acertou! o número pensado era ' + numeroPensado);
+                     break;
+                  
+                }else{
+                    if(chances == 3){    
+                         mostra('As suas chances esgotaram') ;
+                         mostra('O número pensado era ' + numeroPensado);
+                    } 
+                }
+                  alert('Você errou! o número pensado era ' + numeroPensado);
+                 chances++;    
+              
+            }
+          mostra('Fim');
+        
+       
+      
+        
 
 
     </script>
