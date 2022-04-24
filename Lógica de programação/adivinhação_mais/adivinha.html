@@ -7,56 +7,68 @@
     <title>Adivinha o número</title>
 </head>
 <body>
-  <input type="number">
-  <button>Compare com o segredo</button>
-
-  <script>
-     
-     var segredos = [
-         5,7,2,10
-     ];
-     
-
-     var input = document.querySelector('input');
-     var button = document.querySelector('button');
+    <input type="number">
+    <button>Compare com o segredo</button>
+    <script>
+     var input = document.querySelector("input");
+     var button = document.querySelector("button");
      input.focus();
      input.value = "";
 
+     function sorteia() {
+         return Math.round(Math.random() * 10)
+     }
+     
+     function sorteiaNumero(quantidade){
+         var segredo = [];
+         var numero = 1;
+         while(numero <= quantidade){
+             var achou = false;
+             var numeroAleatorio = sorteia();
+              var achou = false;
+              for(var posicao = 0; posicao < segredo.length; posicao++ ){
+                 if(segredo[posicao] == numeroAleatorio ){
+                     achou = true;
+                     break;
+                 }
+              }
+              if(achou == false){
+                  segredo.push(numeroAleatorio);
+              }
+              numero++;  
+         }
+         return segredo;
+         
+     }
+
+     var segredo = sorteiaNumero(4);
+     
+     console.log(segredo);
+
+
      function verifica(){
-        var achou = false;
-
-         for(var posicao = 0; posicao < segredos.length; posicao++){
-             if(input.value == segredos[posicao]){
-                   alert('Você acertou!');
-                    achou = true;
-                }
+         
+        for(var posicao = 0; posicao < segredo.length; posicao++){
+            var achou = false;
+            if(input.value == segredo[posicao]){
+                alert('Você ecertou!');
+                achou = true;
+                break;
             }
-                    if(achou == false){
-                        alert('Você errou!');
-                    }
-                    
-                
-              
-             
-            
-           input.focus();
-           input.value = "";          
-         
         }
-           
-          button.onclick = verifica;
-       
-         
-    
+        if(achou == false){
+            alert('Você errou!');
+        }
+     }
+
+       if(sorteia !== 0){
+
+       }
+     button.onclick = verifica;
      
-    
-    
-     
-     
 
 
 
-  </script>
-
+    </script>
 </body>
 </html>
