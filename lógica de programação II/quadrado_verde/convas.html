@@ -11,24 +11,30 @@
 
     <script>
 
-        function quadradoVerde (){
+        function quadrado (x, y, cor){
        var tela = document.querySelector('canvas');
        var pincel = tela.getContext('2d');
 
-       pincel.fillStyle = 'green';
-       pincel.fillRect(0, 0, 50, 50);
-       pincel.fillStroke = 'blake';
-       pincel.strokeRect(0, 0, 50, 50);
+       pincel.fillStyle = cor;
+       pincel.fillRect(x, y, 50, 50);
+       pincel.fillStroke = 'black';
+       pincel.strokeRect(x, y, 50, 50);
 
-       pincel.fillRect(50, 0, 50, 50);
-       pincel.strokeRect(50, 0, 50, 50);
-
-       pincel.fillRect(100, 0, 50, 50);
-       pincel.strokeRect(100, 0, 50, 50);
+    
         }
+        var x = 0;
+        while(x <=600){
+            quadrado(x, 0, 'green');
+          
+            quadrado(x, 50, 'blue' );
+            x = x + 50;
 
-        quadradoVerde();
-     
+
+        }
+        quadrado();
+
+       
+       
       
       
 
